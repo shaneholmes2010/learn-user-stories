@@ -91,7 +91,12 @@ export class Bank implements BankType {
         return account.balance;
     }
 
-    
+    /**
+     * 
+     * @param accountNumber - a number representing the account number
+     * @param amount - a number representing the amount to be withdrawn
+     * @returns the new balance of the account
+     */
     withdraw(accountNumber: number, amount: number): number {
         if(amount < 0) {
             throw new Error('Amount must be positive');
