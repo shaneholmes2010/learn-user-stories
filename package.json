@@ -1,20 +1,16 @@
 {
-  "name": "learn-user-stories",
+  "name": "todomanage-ts-template",
   "version": "1.0.0",
-  "type": "module",
-  "description": "User Stories Tutorial",
+  "description": "A Simple TodoManager App",
   "main": "index.ts",
   "scripts": {
-    "start": "node --loader ts-node/esm src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx ts-node bank_demo/src/index.ts",
+    "test": "npx ts-node bank_demo/test/bankTest.ts"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^5.7.3"
-  },
   "dependencies": {
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   }
 }
