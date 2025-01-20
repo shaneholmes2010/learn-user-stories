@@ -71,7 +71,7 @@ console.log("");
 console.log("Tests for issue #1");
 
 
-// issue #1: Deposit Money into an account
+// issue #1: Deposit Money into an account.
 
 // Scenario 1: Put in a negative amount of money
 
@@ -109,3 +109,52 @@ try {
     console.log('Scenario 3 passed');
 }
 
+
+
+console.log("");
+console.log("Tests for issue #2");
+
+
+// issue #2: Withdraw money from an account
+
+// Scenario 1: Put in a negative amount of money
+
+try {
+    bank.withdraw(1234567890, -50);
+    console.log('Scenario 1 failed');
+} catch(e) {
+    console.log('Scenario 1 passed');
+}
+
+// Scenario 2: Tries to withdraw more money than exists in the account
+
+try {
+    bank.withdraw(1234567890, 10000);
+    console.log('Scenario 2 failed');
+} catch(e) {    
+    console.log('Scenario 2 passed');
+}
+
+// Scenario 3: Put in fractional cents
+
+try {
+    bank.withdraw(1234567890, 50.454);
+
+    console.log("Scenario 3 failed");
+} catch(e) {
+    console.log('Scenario 3 passed');
+}
+
+// Scenario 4: User puts in a valid sum of money to withdraw from account
+
+try {
+    bank.withdraw(1234567890, 50);
+
+    if(bank.getBalance(1234567890) == 3448.45) {
+        console.log('Scenario 4 passed');
+    } else {
+        console.log('Scenario 4 failed');
+    }
+} catch(e) {
+    console.log('Scenario 4 failed');
+}   
