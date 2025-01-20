@@ -63,7 +63,12 @@ export class Bank implements BankType {
         return account.balance;
     }
 
-
+    /**
+     * 
+     * @param accountNumber - a number representing the account number
+     * @param amount - a number representing the amount to be deposited
+     * @returns the new balance of the account
+     */
     deposit(accountNumber: number, amount: number): number {
         
         if(amount < 0) {
