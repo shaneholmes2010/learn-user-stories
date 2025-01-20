@@ -2,6 +2,9 @@ import { Bank } from '../src/bank';
 
 // setup
 
+console.log("");
+console.log("Tests for setup");
+
 const accounts = [{ id: 1234567890, balance: 3448 },
 { id: 1234567891, balance: 2424 }];
 
@@ -43,4 +46,22 @@ try {
 }
 catch(e) {
     console.log('Scenario 3 passed');
+}
+
+console.log("");
+console.log("Tests for issue #3");
+
+// issue #3: Check the balance of an account
+
+// Scenario 1: The user tries to view their balance
+
+try {
+    if(bank.getBalance(1234567890) == 3448) {
+        console.log('Scenario 1 passed');
+    } else {
+        console.log('Scenario 1 failed');
+    }
+}
+catch(e) {
+    console.log('Scenario 1 passed');
 }
