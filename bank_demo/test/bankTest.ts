@@ -51,7 +51,7 @@ catch(e) {
 console.log("");
 console.log("Tests for issue #3");
 
-// issue #3: Check the balance of an account
+// issue #3: Check the balance of an account.
 
 // Scenario 1: The user tries to view their balance
 
