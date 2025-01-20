@@ -51,6 +51,21 @@ export class Bank implements BankType {
 
     /**
      * 
+     * @param accountNumber - a number representing the account number
+     * @param amount - a number representing the amount to be deposited
+     * @returns the new balance of the account
+     */
+    getBalance(accountNumber: number): number {
+        const account = this.findAccount(accountNumber);
+        if(!account) {
+            throw new Error('Account not found');
+        }
+        return account.balance;
+    }
+
+
+    /**
+     * 
      * @param username - a string representing the username of the customer
      * @param age - a number representing the age of the customer
      * @param accountNumber - a number representing the account number of the customer that needs to be created
