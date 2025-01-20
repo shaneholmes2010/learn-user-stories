@@ -91,6 +91,37 @@ export class Bank implements BankType {
         return account.balance;
     }
 
+    /**
+     * 
+     * @param accountNumber - a number representing the account number
+     * @param amount - a number representing the amount to be withdrawn
+     * @returns the new balance of the account
+     */
+    withdraw(accountNumber: number, amount: number): number {
+        if(amount < 0) {
+            throw new Error('Amount must be positive');
+        }
+
+        if(!(amount.toFixed(2) === amount.toString()
+            ||  amount.toFixed(1) === amount.toString()
+            ||  amount.toFixed(0) === amount.toString())) {
+            throw new Error('Amount must have 2 decimal places');
+        }
+        
+        const account = this.findAccount(accountNumber);
+        
+        if(!account) {
+            throw new Error('Account not found');
+        }
+        
+        if(account.balance < amount) {
+            throw new Error('Insufficient balance');
+        }
+        
+        account.balance -= amount;
+        return account.balance;
+    }
+
 
     /**
      * 
