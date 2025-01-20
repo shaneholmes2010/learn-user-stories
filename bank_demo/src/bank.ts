@@ -64,6 +64,29 @@ export class Bank implements BankType {
     }
 
 
+    deposit(accountNumber: number, amount: number): number {
+        
+        if(amount < 0) {
+            throw new Error('Amount must be positive');
+        }
+
+        if(!(amount.toFixed(2) === amount.toString()
+            ||  amount.toFixed(1) === amount.toString()
+            ||  amount.toFixed(0) === amount.toString())) {
+            throw new Error('Amount must have 2 decimal places');
+        }
+        
+        const account = this.findAccount(accountNumber);
+        
+        if(!account) {
+            throw new Error('Account not found');
+        }
+        
+        account.balance += amount;
+        return account.balance;
+    }
+
+
     /**
      * 
      * @param username - a string representing the username of the customer

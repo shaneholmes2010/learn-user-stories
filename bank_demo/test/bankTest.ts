@@ -67,6 +67,9 @@ catch(e) {
 }
 
 
+console.log("");
+console.log("Tests for issue #1");
+
 
 // issue #1: Deposit Money into an account
 
@@ -79,6 +82,7 @@ try {
 catch(e) {
     console.log('Scenario 1 passed');
 }
+
 
 // Scenario 2: Put in a positive amount of money to the cent
 
@@ -104,3 +108,4 @@ try {
 } catch(e) {
     console.log('Scenario 3 passed');
 }
+
