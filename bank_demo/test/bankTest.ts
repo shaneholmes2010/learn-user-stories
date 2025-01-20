@@ -65,3 +65,47 @@ try {
 catch(e) {
     console.log('Scenario 1 passed');
 }
+
+
+console.log("");
+console.log("Tests for issue #1");
+
+
+// issue #1: Deposit Money into an account
+
+// Scenario 1: Put in a negative amount of money
+
+try {
+    bank.deposit(1234567890, -50);
+    console.log('Scenario 1 failed');
+}
+catch(e) {
+    console.log('Scenario 1 passed');
+}
+
+
+// Scenario 2: Put in a positive amount of money to the cent
+
+try {
+    bank.deposit(1234567890, 50.45);
+
+    if(bank.getBalance(1234567890) == 3498.45) {
+        console.log('Scenario 2 passed');
+
+    } else {    
+        console.log('Scenario 2 failed');
+    }
+} catch(e) {
+    console.log('Scenario 2 failed');
+}
+
+// Scenario 3: Put in fractional cents
+
+try {
+    bank.deposit(1234567890, 50.454);
+
+    console.log("Scenario 3 failed");
+} catch(e) {
+    console.log('Scenario 3 passed');
+}
+
